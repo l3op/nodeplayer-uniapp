@@ -4,6 +4,7 @@
 </template>
 
 <script>
+	// HBuilderX内置浏览器暂不支持WASM，请使用chrome运行
 	export default {
 		data() {
 			return {
