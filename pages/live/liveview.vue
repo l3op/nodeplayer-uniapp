@@ -21,7 +21,7 @@
 			this.np.setView(cv.id);
 			this.np.setBufferTime(500);
 			this.np.setScaleMode(2);
-			this.np.start("http://192.168.0.2:8000/live/bbb.flv");
+			this.np.start("http://flv.bdplay.nodemedia.cn/live/xxm_c.flv");
 		},
 		onUnload() {
 			// canvas 是由createElement每次创建，调用这个方法完全释放，避免16次之后WebGL出现警告
