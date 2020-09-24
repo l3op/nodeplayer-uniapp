@@ -22,6 +22,8 @@
 			cv.id = "video"
 			cv.style.cssText = "width: 100%;height: 100%;"
 			this.$refs.videoView.$el.appendChild(cv);
+			// 创建NodePlayer实例，本demo使用试用开发包，10分钟断开，重新进入页面继续测试
+			// 正式使用需购买商用授权，访问 https://www.nodemedia.cn/获取详情
 			this.np = new NodePlayer();
 			this.np.setView(cv.id);
 			this.np.setBufferTime(500);
