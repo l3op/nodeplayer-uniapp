@@ -7,34 +7,41 @@
 	export default {
 		data() {
 			return {
-
+				urls: [
+					"http://flv.bdplay.nodemedia.cn/live/xxm_a.flv",
+					"http://flv.bdplay.nodemedia.cn/live/xxm_b.flv",
+					"http://flv.bdplay.nodemedia.cn/live/xxm_c.flv"
+				]
 			}
 		},
+
 		onReady() {
 			// uni-app 会劫持canvas标签并替换为uni-canvas，无法赋予canvas标签id
 			// 这里创建canvas元素，插入到view中
 			let cv = document.createElement("canvas");
 			cv.id = "video"
-			cv.style.cssText="width: 100%;height: 100%;"
+			cv.style.cssText = "width: 100%;height: 100%;"
 			this.$refs.videoView.$el.appendChild(cv);
 			this.np = new NodePlayer();
 			this.np.setView(cv.id);
 			this.np.setBufferTime(500);
 			this.np.setScaleMode(2);
-			this.np.start("http://flv.bdplay.nodemedia.cn/live/xxm_c.flv");
+			this.np.start(this.$data.urls[this.Random(0, 2)]);
 		},
 		onUnload() {
 			// canvas 是由createElement每次创建，调用这个方法完全释放，避免16次之后WebGL出现警告
 			this.np.release(true);
 		},
 		methods: {
-
+			Random: function(min, max) {
+				return Math.round(Math.random() * (max - min)) + min;
+			},
 		}
 	}
 </script>
 
 <style>
-	.videoView{
+	.videoView {
 		width: 100%;
 		height: 100vh;
 	}
