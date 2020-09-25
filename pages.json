@@ -29,12 +29,12 @@
 			"path": "pages/tabbar-3-detial/tabbar-3-video/tabbar-3-video",
 			"style": {}
 		},
-		{
-			"path": "pages/tabbar-3-detial/tabbar-3-qa/tabbar-3-qa",
-			"style": {}
-		}
-        ,{
+        {
             "path" : "pages/live/liveview",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/show/show",
             "style" : {}
         }
     ],
